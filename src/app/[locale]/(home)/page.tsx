@@ -1,6 +1,5 @@
 import Icons from "./Icons";
-import LargeCard from "@/components/cards/LargeCard";
-import Hero from "@/app/[locale]/(home)/Hero";
+
 import Overview from "./Overview";
 import SmallCards from "./SmallCards";
 import EditorsChoice from "./EditorsChoice";
@@ -8,6 +7,9 @@ import Customization from "./Customization";
 import WhatOthersAreSaying from "./WhatOthersAreSaying";
 import StayInTheLoop from "./StayInTheLoop";
 import ResearchAndLearning from "./ResearchAndLearning";
+import React from "react";
+import LargeCard from "../../../components/cards/LargeCard";
+import Hero from "./Hero";
 
 export const metadata = {
   title: "Craft - Docs and Notes Editor",
