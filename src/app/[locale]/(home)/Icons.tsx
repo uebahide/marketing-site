@@ -37,7 +37,7 @@ export default function Icons() {
   ];
   return (
     <section className="flex flex-col justify-center items-center py-[80px] px-[24px] md:py-[160px] md:px-[120px] gap-[80px] ">
-      <h2 className="font-serif">{t("home.icons.title")}</h2>
+      <h2 className="font-serif text-center">{t("home.icons.title")}</h2>
       <div className="grid grid-cols-2 md:flex gap-[60px]">
         {icons.map((item) => (
           <div
