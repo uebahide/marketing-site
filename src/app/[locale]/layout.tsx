@@ -23,9 +23,8 @@ export default async function LocaleLayout({
         <NextIntlClientProvider>
           <Header />
           <main>{children}</main>
-          {/* <Footer /> */}
+          <Footer />
         </NextIntlClientProvider>
-        <Footer />
       </body>
     </html>
   );

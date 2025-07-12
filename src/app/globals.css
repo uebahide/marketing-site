@@ -6,10 +6,143 @@
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-untitled-sans), var(--font-inter), "apple-system",
+    "BlinkMacSystemFont", "Helvetica Neue", "Helvetica", "Arial", "sans-serif";
+  --font-serif: var(--font-untitled-serif), "apple-system-ui-serif", "ui-serif",
+    "Georgia", "serif";
+
+  --font-sans-alt: var(--font-inter), "apple-system", "BlinkMacSystemFont",
+    "Helvetica Neue", "Helvetica", "Arial", "sans-serif";
+
+  --color-black: var(--color-black-900);
+  --color-black-900: rgba(3, 3, 2, 1);
+  --color-black-800: rgba(3, 3, 2, 0.9);
+  --color-black-700: rgba(3, 3, 2, 0.75);
+  --color-black-600: rgba(3, 3, 2, 0.65);
+  --color-black-500: rgba(3, 3, 2, 0.5);
+  --color-black-400: rgba(3, 3, 2, 0.35);
+  --color-black-300: rgba(3, 3, 2, 0.25);
+  --color-black-200: rgba(3, 3, 2, 0.12);
+  --color-black-100: rgba(3, 3, 2, 0.09);
+  --color-black-50: rgba(3, 3, 2, 0.04);
+
+  --color-beige: #fcf9f7;
+  --color-white: #ffffff;
+
+  --color-green: var(--color-green-4);
+  --color-green-4: #3f8850;
+  --color-green-3: #4aa25e;
+  --color-green-2: #9bd8a9;
+  --color-green-1: #d5f0db;
+
+  --color-blue: var(--color-blue-4);
+  --color-blue-4: #427e8a;
+  --color-blue-3: #4ba2b4;
+  --color-blue-2: #9ed4ef;
+  --color-blue-1: #e0f0f5;
+
+  --color-purple: var(--color-purple-4);
+  --color-purple-4: #4b68c3;
+  --color-purple-3: #748ddd;
+  --color-purple-2: #b8caf5;
+  --color-purple-1: #d6e0f7;
+
+  --color-pink: var(--color-pink-4);
+  --color-pink-4: #a549ab;
+  --color-pink-3: #c27ba0;
+  --color-pink-2: #e9b8d9;
+  --color-pink-1: #f9e0f0;
+
+  --color-red: var(--color-red-4);
+  --color-red-4: #bb433a;
+  --color-red-3: #e66960;
+  --color-red-2: #f09d93;
+  --color-red-1: #f3d1ce;
+
+  --color-orange: var(--color-orange-4);
+  --color-orange-4: #b25620;
+  --color-orange-3: #dd8e40;
+  --color-orange-2: #f6cb98;
+  --color-orange-1: #f9debd;
+
+  --color-yellow: var(--color-yellow-4);
+  --color-yellow-4: #987e1b;
+  --color-yellow-3: #dfb720;
+  --color-yellow-2: #fde99b;
+  --color-yellow-1: #fef3c7;
+
+  /* Glass Button Variables */
+  --glass-gradient: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.6) 0%,
+    rgba(255, 255, 255, 1) 25%,
+    rgba(255, 255, 255, 0.6) 50%,
+    rgba(227, 244, 253, 1) 75%
+  );
+
+  /* Navbar Gradient */
+  --navbar-gradient: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.529) 10%,
+    rgba(227, 244, 253, 0.448) 100%
+  );
+}
+
+@layer base {
+  /* when lang="vi", use font-inter */
+  html[lang="vi"] {
+    @apply font-sans-alt;
+  }
+
+  a {
+    @apply text-black-700 hover:text-black-800 transition-colors duration-200 ease-in-out;
+  }
+
+  strong {
+    @apply font-medium;
+  }
+
+  h1,
+  .h1 {
+    @apply text-center font-serif text-[40px] leading-[100%] font-normal tracking-[-0.04em] sm:text-[60px] sm:tracking-[-0.04em] lg:text-[70px] lg:tracking-[-0.04em] 2xl:text-[80px] 2xl:leading-[100%] 2xl:tracking-[-0.04em];
+  }
+
+  h2,
+  .h2 {
+    @apply font-serif text-[32px] leading-[99%] font-normal tracking-[-0.04em] sm:text-[44px] sm:tracking-[-0.04em] lg:text-[52px] lg:leading-[110%] lg:tracking-[-0.04em] 2xl:text-[60px] 2xl:tracking-[-0.04em];
+  }
+
+  h3,
+  .h3 {
+    @apply font-serif text-[26px] font-normal tracking-[-0.04em] sm:text-[30px] sm:tracking-[-0.04em] lg:text-[36px] lg:tracking-[-0.04em] 2xl:text-[42px] 2xl:tracking-[-0.04em];
+  }
+
+  .quote-large {
+    @apply font-serif text-[28px] leading-[110%] font-normal tracking-[-0.04em] sm:text-[36px] sm:leading-[110%] sm:tracking-[-0.04em] lg:text-[44px] lg:leading-[110%] lg:tracking-[-0.04em] 2xl:text-[48px] 2xl:leading-[110%] 2xl:tracking-[-0.04em];
+  }
+
+  h4,
+  .h4 {
+    @apply text-[16px] font-medium tracking-[-0.02em] uppercase;
+  }
+
+  blockquote,
+  .quote {
+    @apply font-serif text-[22px] tracking-[-0.03em] italic sm:text-[24px] sm:tracking-[-0.03em] lg:text-[24px] lg:tracking-[-0.03em] 2xl:text-[28px] 2xl:tracking-[-0.03em];
+  }
+
+  .large {
+    @apply text-[28px] tracking-[-0.03em] sm:text-[30px] sm:tracking-[-0.03em] lg:text-[32px] lg:tracking-[-0.03em] 2xl:text-[36px] 2xl:tracking-[-0.03em];
+  }
+
+  p,
+  .p {
+    @apply text-[18px] leading-[140%] tracking-[-0.02em] sm:text-[18px] sm:tracking-[-0.02em] lg:text-[18px] lg:tracking-[-0.02em] 2xl:text-[20px] 2xl:tracking-[-0.02em];
+  }
+
+  .small {
+    @apply text-[16px] leading-[140%] tracking-[-0.02em] sm:text-[16px] sm:tracking-[-0.02em] lg:text-[16px] lg:tracking-[-0.02em] 2xl:text-[18px] 2xl:tracking-[-0.02em];
+  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -17,10 +150,4 @@
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
 }

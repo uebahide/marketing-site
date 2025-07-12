@@ -1,1 +1,13 @@
-{}
+{
+  "home": {
+    "icons": {
+      "title": "Craft isn't just for one thing, it's for your things",
+      "docs": "Docs",
+      "tasks": "Tasks",
+      "dailyNotes": "Daily Notes",
+      "whiteBoards": "White Boards",
+      "calender": "Calender",
+      "publishing": "Publishing"
+    }
+  }
+}

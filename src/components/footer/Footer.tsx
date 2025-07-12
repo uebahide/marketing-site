@@ -60,7 +60,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="flex flex-col mx-auto absolute inset-x-0 px-[16px] py-8 max-w-6xl gap-[48px]">
+    <footer className="flex flex-col mx-auto  inset-x-0 px-[16px] py-8 max-w-6xl gap-[48px]">
       <div className="flex gap-20 flex-wrap">
         {footerMenu.map((menu) => (
           <div key={menu.title} className="flex flex-col gap-8">
