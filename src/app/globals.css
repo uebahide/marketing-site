@@ -109,7 +109,7 @@
 
   h2,
   .h2 {
-    @apply font-serif text-[32px] leading-[99%] font-normal tracking-[-0.04em] sm:text-[44px] sm:tracking-[-0.04em] lg:text-[52px] lg:leading-[110%] lg:tracking-[-0.04em] 2xl:text-[60px] 2xl:tracking-[-0.04em];
+    @apply font-serif text-[32px] leading-[99%] font-normal tracking-[-0.04em] sm:text-[52px] sm:tracking-[-0.04em] lg:text-[52px] lg:leading-[110%] lg:tracking-[-0.04em] 2xl:text-[60px] 2xl:tracking-[-0.04em];
   }
 
   h3,
@@ -149,5 +149,128 @@
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+  }
+}
+
+@utility shadow-block {
+  box-shadow: 0px 50px 40px 0px rgba(0, 0, 0, 0.01),
+    0px 50px 40px 0px rgba(0, 0, 0, 0.02), 0px 20px 40px 0px rgba(0, 0, 0, 0.05),
+    0px 3px 10px 0px rgba(0, 0, 0, 0.08);
+}
+
+@utility glass-button-gradient-bg {
+  position: absolute;
+  inset: 0;
+  background-image: var(--glass-gradient);
+  background-size: 300% 300%;
+  background-position: 50% 0;
+  transition: background-position 0.5s;
+}
+
+button:hover .glass-button-gradient-bg,
+a:hover .glass-button-gradient-bg {
+  background-position: 50% 70%;
+}
+
+/* Glass Button shadows */
+@utility glass-button-shadow {
+  @apply shadow-[0_12px_12px_2px_rgba(0,0,0,0.1),0_2px_4px_-1px_rgba(0,0,0,0.06)];
+
+  &:hover {
+    @apply shadow-[0_20px_25px_4px_rgba(0,0,0,0.1),0_10px_10px_-5px_rgba(0,0,0,0.04)];
+  }
+}
+/* Glass Button Border */
+@utility glass-border-* {
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    /* prettier-ignore */
+    border-radius: --value(--radius-*);
+    padding: 0.8px;
+    margin-bottom: 1px;
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(117, 171, 199, 1) 30%,
+      rgba(255, 255, 255, 1) 100%
+    );
+    -webkit-mask: linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    transition: all 0.5s ease-in-out;
+  }
+}
+
+/* Glass Background */
+@utility glass-background {
+  background: var(--navbar-gradient);
+}
+
+@utility glass-toggle-bg {
+  background: linear-gradient(
+    180deg,
+    rgba(117, 171, 199, 0.24) 60%,
+    rgba(255, 255, 255, 0.8) 90%
+  );
+}
+
+@utility glass-toggle-button-bg {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.5) 10%,
+    rgba(255, 255, 255, 1) 50%
+  );
+}
+
+@utility glass-toggle-border {
+  position: relative;
+  border: none;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 56px;
+    padding: 0.5px;
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 1),
+      rgba(117, 171, 199, 1),
+      rgba(255, 255, 255, 1)
+    );
+    -webkit-mask: linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+}
+@utility glass-toggle-button-border {
+  position: relative;
+  border: none;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 56px;
+    padding: 1px;
+    background: linear-gradient(
+      170deg,
+      rgba(255, 255, 255, 1),
+      rgba(117, 171, 199, 0.3)
+    );
+    -webkit-mask: linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
   }
 }
