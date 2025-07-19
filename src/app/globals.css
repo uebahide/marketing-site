@@ -109,7 +109,7 @@
 
   h2,
   .h2 {
-    @apply font-serif text-[32px] leading-[99%] font-normal tracking-[-0.04em] sm:text-[44px] sm:tracking-[-0.04em] lg:text-[52px] lg:leading-[110%] lg:tracking-[-0.04em] 2xl:text-[60px] 2xl:tracking-[-0.04em];
+    @apply font-serif text-[32px] leading-[99%] font-normal tracking-[-0.04em] sm:text-[52px] sm:tracking-[-0.04em] lg:text-[52px] lg:leading-[110%] lg:tracking-[-0.04em] 2xl:text-[60px] 2xl:tracking-[-0.04em];
   }
 
   h3,
