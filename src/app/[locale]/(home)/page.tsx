@@ -17,15 +17,15 @@ export const metadata = {
 
 export default function Home() {
   return (
-    <div className="">
+    <div>
       <Hero />
-      <div>
+      <div className="max-w-[1400px] mx-auto">
         <Icons />
         <LargeCard />
         <Overview />
         <SmallCards />
         <section>{/* quote */}</section>
-        <LargeCard />
+        {/* <LargeCard /> */}
         <EditorsChoice />
         <Customization />
         <WhatOthersAreSaying />
