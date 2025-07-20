@@ -21,6 +21,7 @@ import IconTodo from "@/components/icons/Todo";
 import IconClock from "@/components/icons/Clock";
 import IconDoc from "@/components/icons/Doc";
 import IconCalendar from "@/components/icons/Calendar";
+import { SectionContainer, SectionHeader } from "@/components/section/Section";
 
 export const metadata = {
   title: "Craft - Docs and Notes Editor",
@@ -78,7 +79,16 @@ export default function Home() {
           bgColor="bg-purple-2"
         />
         <Overview />
-        <SmallCards />
+        <SectionContainer>
+          <SectionHeader
+            label="overview"
+            title="When you open Craft, everything else flows naturally"
+            description="Your best writing happens when the tool disappears. When you are in Craft, everything just works."
+            buttonText="Learn More"
+            href="#"
+          />
+          <SmallCards />
+        </SectionContainer>
         <section>{/* quote */}</section>
         <LargeCard
           image={LargeCardImage2}
