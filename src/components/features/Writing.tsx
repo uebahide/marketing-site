@@ -35,11 +35,13 @@ export const TextContent = ({ children }: { children: ReactNode }) => {
 };
 
 export const Title = ({ children }: { children: ReactNode }) => {
-  return <h3>{children}</h3>;
+  return <h3 className="leading-[1.2] text-black-900">{children}</h3>;
 };
 
 export const Description = ({ children }: { children: ReactNode }) => {
-  return <p className="text-[20px] max-w-[653px]">{children}</p>;
+  return (
+    <p className="text-[20px] max-w-[653px] text-[#030302BF]/75">{children}</p>
+  );
 };
 
 export const IconWithLabel = ({ features }: { features: Feature[] }) => {
@@ -48,7 +50,9 @@ export const IconWithLabel = ({ features }: { features: Feature[] }) => {
       {features.map((feature) => (
         <div key={feature.label} className="flex items-center gap-5">
           <feature.icon className="h-[26.67px] w-[26.67px]" />
-          <p className="text-[16px] font-bold">{feature.label}</p>
+          <p className="text-[16px] font-bold text-[#181615E5]/90">
+            {feature.label}
+          </p>
         </div>
       ))}
     </div>
