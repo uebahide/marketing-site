@@ -8,7 +8,7 @@ import IconCloud from "../icons/Cloud";
 import IconBlankDoc from "../icons/Blank Doc";
 import { cn } from "@/utils/ClassNames";
 
-type Feature = {
+export type Feature = {
   icon: ({
     className,
   }: {
