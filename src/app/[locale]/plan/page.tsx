@@ -13,8 +13,12 @@ import ToDos from "../../../../public/images/features/to_dos.png";
 import DailyNote from "../../../../public/images/features/daily_note.png";
 import AaronImage from "../../../../public/images/people/Aaron.png";
 import RayImage from "../../../../public/images/people/Ray.png";
+import StevenImage from "../../../../public/images/people/Steven.png";
 import IconAiApple from "@/components/icons/AiApple";
 import Verge from "@/components/features/Verge";
+
+import FeatureHero from "@/components/features/ FeatureHero";
+import PlanHeroVector from "../../../../public/images/features/plan_hero_vector.png";
 
 const Plan = () => {
   const toDoFeatures = [
@@ -32,13 +36,29 @@ const Plan = () => {
     iconImageSrc: RayImage,
     name: "Ray",
     testimonial:
-      "Craft is the first thing I open to plan my day and the last thing I use to jot down my final thoughts. It's my dashboard and diary in one.'",
+      "Craft is the first thing I open to plan my day and the last thing I use to jot down my final thoughts. It's my dashboard and diary in one.",
+  };
+  const StevenTestimonial = {
+    iconImageSrc: StevenImage,
+    name: "Steven",
+    testimonial:
+      "Craft makes it easy to manage complex projects with clarity. I can organize tasks, follow-ups, and updates in a way that actually makes sense.",
   };
 
   return (
-    <>
+    <div className="p-5 space-y-45">
       {/* <FeatureHero /> */}
-      <div className="h-[100px]"></div>
+      <FeatureHero
+        variant="plan"
+        bgColor="bg-[#FDE99B]"
+        title={
+          <>
+            Plan your day <br /> your way
+          </>
+        }
+        description="Capture, organize, and plan – all without breaking your creative flow."
+        heroVectorSrc={PlanHeroVector}
+      />
       {/* to dos writing */}
       <Writing>
         <WritingImage src={ToDos} />
@@ -82,7 +102,14 @@ const Plan = () => {
         testimonial={RayTestimonial.testimonial}
         reverse
       />
-    </>
+      {/* Steven's verge */}
+      <Verge
+        iconImageSrc={StevenTestimonial.iconImageSrc}
+        iconBGColor="bg-yellow-2"
+        name={StevenTestimonial.name}
+        testimonial={StevenTestimonial.testimonial}
+      />
+    </div>
   );
 };
 

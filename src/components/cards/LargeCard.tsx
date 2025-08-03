@@ -44,7 +44,7 @@ export default function LargeCard({
       <Image
         src={PaperTexture}
         alt="large card image1"
-        className="absolute -z-10 opacity-20 rounded-3xl"
+        className="absolute -z-10 opacity-20 rounded-3xl mix-blend-overlay"
         fill
       />
 
